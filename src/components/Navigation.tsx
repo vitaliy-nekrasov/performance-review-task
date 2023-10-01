@@ -1,11 +1,15 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import { ReactComponent as ReactLogo } from "../logo.svg";
 
 export function Navigation() {
   return (
     <div className="bg-gray-500 text-yellow-300">
       <div className="container ml-auto mr-auto flex justify-between h=[80px] py-4">
-        <span className="font-bold">Logo</span>
+        <div className="flex">
+          <ReactLogo className="w-9" />
+          <Link to="/" className="font-bold">SHOP</Link>
+        </div>
         <div className="font-bold">
           <NavLink
             to="/"
