@@ -14,7 +14,7 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <Navigation />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/performance-review-task/" element={<HomePage />} />
           <Route path="/favourites" element={<FavouritesPage />} />
         </Routes>
         <Footer />

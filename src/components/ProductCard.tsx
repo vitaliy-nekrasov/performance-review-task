@@ -8,7 +8,7 @@ export function ProductCard({ data }: { data: IProduct }) {
   const { favourites } = useAppSelector(state => state.shop);
   
   const [isFavourite, setIsFavourite] = useState(favourites.includes(data));
-    
+   
   const addToFavouriteProduct = (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();  
       addToFavourite(data);

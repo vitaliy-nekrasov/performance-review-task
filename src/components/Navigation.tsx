@@ -8,13 +8,13 @@ export function Navigation() {
       <div className="container ml-auto mr-auto flex justify-between h=[80px] py-4 px-6">
         <div className="flex items-center">
           <ReactLogo className="w-9" />
-          <Link to="/" className="font-bold md:text-sm">
+          <Link to="/performance-review-task/" className="font-bold md:text-sm">
             SHOP
           </Link>
         </div>
         <div className="font-bold">
           <NavLink
-            to="/"
+            to="/performance-review-task/"
             className="mr-3 py-2 px-4 hover:bg-gray-800 hover:border-black rounded transition-all duration-300 md:text-sm md:py-1 md:px-2 md:mr-0"
           >
             Home page

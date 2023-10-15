@@ -2,7 +2,16 @@ import { configureStore } from "@reduxjs/toolkit";
 import { shopApi } from "./shop/shop.api.";
 import { shopReducer } from "./shop/shop.slice";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import { persistStore, persistReducer } from "redux-persist";
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
@@ -17,8 +26,14 @@ export const store = configureStore({
     [shopApi.reducerPath]: shopApi.reducer,
     shop: persistedShopReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({}).concat(shopApi.middleware),
+  middleware: (getDefaultMiddleware) => [
+    ...getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+    shopApi.middleware,
+  ],
 });
 
 setupListeners(store.dispatch)
