@@ -9,7 +9,11 @@ interface FormProps {
 export function Form({ submitHandler, setSelectValue, selectValue }: FormProps) {
 
   return (
-    <form action="" className="mb-10 flex md:flex-col" onSubmit={submitHandler}>
+    <form
+      action=""
+      className="mb-10 flex md:flex-col dark:bg-slate-600"
+      onSubmit={submitHandler}
+    >
       <select
         id="size"
         name="size"
@@ -19,9 +23,7 @@ export function Form({ submitHandler, setSelectValue, selectValue }: FormProps) 
           setSelectValue(e.target.value)
         }
       >
-        <option value="electronics">
-          electronics
-        </option>
+        <option value="electronics">electronics</option>
         <option value="jewelery">jewelery</option>
         <option value="men's clothing">men's clothing</option>
         <option value="women's clothing">women's clothing</option>

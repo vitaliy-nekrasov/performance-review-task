@@ -21,9 +21,9 @@ export function ProductCard({ data }: { data: IProduct }) {
   }
 
   return (
-    <li className="productCard flex flex-row border-2 border-black rounded shadow-xl mb-5 p-2 ml-auto w-3/4 mr-auto h-auto">
-      <div className="wrapper flex flex-col justify-evenly w-3/4 md:w-full">
-        <h2 className="productTitle text-3xl font-bold mb-3 2xl:text-2xl md:text-base">
+    <li className="productCard flex flex-row border-2 border-black rounded shadow-xl mb-5 p-2 ml-auto w-3/4 mr-auto h-auto dark:border-gray-300">
+      <div className="wrapper flex flex-col justify-evenly w-3/4 md:w-full ">
+        <h2 className="productTitle text-3xl font-bold mb-3 2xl:text-2xl md:text-base dark:text-gray-300">
           {data.title}
         </h2>
         <img
@@ -31,15 +31,15 @@ export function ProductCard({ data }: { data: IProduct }) {
           alt={data.title}
           className="hidden w-36 h-32 object-contain mb-3 ml-auto mr-auto md:flex"
         />
-        <p className="description text-xl mb-3 2xl:text-lg md:text-sm">
+        <p className="description text-xl mb-3 2xl:text-lg md:text-sm dark:text-gray-300">
           {data.description}
         </p>
         <div className="flex gap-2">
-          <p className="price">
+          <p className="price dark:text-gray-300">
             <span className="font-bold">Price: </span>
             {data.price}$
           </p>
-          <p className="rating">
+          <p className="rating dark:text-gray-300">
             <span className="font-bold">Rating: </span>
             {data.rating.rate}
           </p>
